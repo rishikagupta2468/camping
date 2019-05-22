@@ -1,0 +1,35 @@
+.thumbnail img {
+    width: 100%;
+}
+
+.thumbnail {
+    padding: 0;
+}
+
+.thumbnail .caption-full {
+    padding: 9px;
+}
+
+#delete-form {
+    display: inline;
+}
+.delete{
+    display: inline;
+}
+.zoom{
+  transition: transform .2s;
+}
+.zoom:hover{
+  transform: scale(1.2);
+}
+.border{
+    border:0px solid black;
+    padding:3px;
+}
+.jumbotron{
+    margin-top: 7em;
+}
+.resize{
+    width:30em;
+    height: 20em;
+}

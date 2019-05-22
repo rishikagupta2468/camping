@@ -1,0 +1,31 @@
+<% include ../partials/header %> 
+
+ <div class="container">
+     <header class="jumbotron">
+         <div class="container">
+             <h1>Welcome to farming world!</h1>
+             <p>We believe in sharing experiences to grow together</p>
+             <p>
+                <a class="btn btn-primary btn-large" href="/campgrounds/new">Add New Experience</a>
+             </p>
+         </div>
+     </header>
+     
+     <div class="row text-center" style="display:flex; flex-wrap: wrap;">
+        <% campgrounds.forEach(function(campground){ %>
+            <div class="col-md-3 col-sm-5">
+                <div class="card zoom border">
+                    <img src="<%= campground.image %>"class="card-img-top" style="width:15em;heigth:10em">
+                    <div class="card-body">
+                        <h5 class="card-title"><%= campground.name %></h5>
+                        <p class="card-text"><%=campground.description%></p>
+                        <a href="/campgrounds/<%= campground._id %>" class="btn btn-primary">Read more</a>
+                    </div>
+                </div>
+                <br>
+            </div>
+        <% }); %>
+    </div>
+</div>
+
+<% include ../partials/footer %>

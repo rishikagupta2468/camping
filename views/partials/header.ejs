@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Farming</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/stylesheets/main.css">
+        <link rel="stylesheet" text="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.css">
+    </head>
+    <body>
+    <div class="ui fixed inverted menu" style="height:4em;margin:0em;padding:0em">
+        <div class="header left item">
+                <a class="navbar-brand" href="/">Farming</a>
+            </div>
+        <div class="ui container">
+            <a class="item" href="/">
+      <i class="home icon"></i> Home
+    </a>
+    <a class="item">
+      <i class="globe icon"></i> About us
+    </a>
+    <div class="ui simple dropdown item">
+      Major crops
+      <i class="dropdown icon"></i>
+      <div class="menu">
+        <a class="item"> Wheat</a>
+        <a class="item"> Rice</a>
+        <a class="item">Maize</a>
+      </div>
+    </div>
+    <a class="item">
+      <i class="phone icon"></i> Contact us
+    </a>
+    <!--<a class="item">-->
+    <!--  <i class="facebook icon"></i>-->
+    <!--</a>-->
+    <!--<a class="item">-->
+    <!--  <i class="linkedin icon"></i>-->
+    <!--</a>-->
+    <div class="item">
+      <div id="google_translate_element"></div>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+}
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" ></script>
+    </div>
+    <div class="item">
+      <i class="search link icon"></i>
+      <div class="ui input"><input type="text" placeholder="Search..."></div>
+    </div>
+            <div class="item">
+                <ul class="nav navbar-nav navbar-right right item">
+                    <% if(!currentUser){ %>
+                        <li><a href="/login">Login</a></li>
+                        <li><a href="/register">Sign Up</a></li>
+                    <% } else { %>
+                        <li><a href="#"><%= currentUser.username %></a></li>
+                        <li><a href="/logout">Logout</a></li>
+                    <% } %>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        
+        <% if(error && error.length > 0){ %>
+            <div class="alert alert-danger" role="alert">
+                <%= error %>
+            </div>
+        <% } %>
+        <% if(success && success.length > 0){ %>
+            <div class="alert alert-success" role="alert">
+                <%= success %>
+            </div>
+        <% } %>
+    </div>
+    
